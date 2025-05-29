@@ -1,0 +1,76 @@
+@keyframes bark {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes ear-left {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-10deg); }
+}
+
+@keyframes ear-right {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(10deg); }
+}
+
+@keyframes mouth {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.5); }
+}
+
+@keyframes sound-wave {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.animate-bark {
+  animation: bark 1s infinite;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.animate-ear-left {
+  animation: ear-left 1s infinite;
+  transform-origin: top left;
+}
+
+.animate-ear-right {
+  animation: ear-right 1s infinite;
+  transform-origin: top right;
+}
+
+.animate-mouth {
+  animation: mouth 1s infinite;
+  transform-origin: center;
+}
+
+.animate-sound-wave-1,
+.animate-sound-wave-2,
+.animate-sound-wave-3 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #8B4513;
+  border-radius: 50%;
+  animation: sound-wave 1s infinite;
+  box-shadow: 0 0 10px rgba(139, 69, 19, 0.3);
+}
+
+.animate-sound-wave-1 {
+  animation-delay: 0s;
+}
+
+.animate-sound-wave-2 {
+  animation-delay: 0.2s;
+}
+
+.animate-sound-wave-3 {
+  animation-delay: 0.4s;
+}
+
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+.animate-bark:hover {
+  transform: scale(1.05);
+}

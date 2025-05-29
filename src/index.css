@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* LOBSTER FONT */
-@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap"); */
 
 /* INTER FONT */
 
@@ -80,7 +80,95 @@ li {
   text-shadow: 2px 2px #e7fafe;
 }
 
-@media (min-width: 1000px) {
+.btn {
+  background-color: #e7fafe;
+  cursor: pointer;
+  color: #333;
+  /* padding: 0.5rem 1rem; */
+}
+
+.btn:hover {
+  background-color: #f97316;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.breakfast {
+  background-image: linear-gradient(to top, #e7fafe, #fff);
+  padding: 1rem;
+}
+
+.vegan {
+  background-image: linear-gradient(
+    to top,
+    hsla(100, 54%, 51%, 0.1),
+    hsla(100, 54%, 51%, 0)
+  );
+  padding: 1rem;
+}
+
+.meat {
+  background-image: linear-gradient(
+    to top,
+    hsla(0, 100%, 50%, 0.1),
+    hsla(0, 100%, 50%, 0)
+  );
+  padding: 1rem;
+}
+
+.dessert {
+  background-image: linear-gradient(
+    to top,
+    hsla(50, 100%, 50%, 0.1),
+    hsla(50, 100%, 50%, 0)
+  );
+  padding: 1rem;
+}
+
+.lunch {
+  background-image: linear-gradient(
+    to top,
+    hsla(0, 0%, 0%, 0.05),
+    hsla(0, 0%, 0%, 0)
+  );
+  padding: 1rem;
+}
+
+.chocolate {
+  background-image: linear-gradient(
+    to top,
+    hsla(30, 100%, 50%, 0.1),
+    hsla(30, 100%, 50%, 0)
+  );
+  padding: 1rem;
+}
+
+.breakfast p,
+.vegan p,
+.meat p,
+.dessert p,
+.lunch p,
+.chocolate p {
+  color: #333;
+  font-family: inter, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+@media (min-width: 1024px) {
   .hero_section {
     background-image: none;
     background-color: #e7fafe;
