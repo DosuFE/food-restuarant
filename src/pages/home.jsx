@@ -6,6 +6,7 @@ import meat from "../assets/meat.jpg";
 import dessert from "../assets/dessert.jpg";
 import lunch from "../assets/lunch.jpg";
 import chocolate from "../assets/chocolate.jpg";
+import RecipeCard from "../components/simple_recipe";
 
 export default function Home() {
   return (
@@ -211,6 +212,10 @@ export default function Home() {
             we have something for everyone.
           </p>
         </div>
+        <main className="mt-10">
+          {/* Recipe Cards */}
+          <RecipeCard />
+        </main>
       </section>
     </>
   );
