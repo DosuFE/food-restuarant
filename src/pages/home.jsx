@@ -7,8 +7,17 @@ import dessert from "../assets/dessert.jpg";
 import lunch from "../assets/lunch.jpg";
 import chocolate from "../assets/chocolate.jpg";
 import RecipeCard from "../components/simple_recipe";
+import chef from "../assets/portrait-happy-male-chef-dressed-uniform.jpg";
+import onions from "../assets/onions.jpg";
+import tomato from "../assets/tomato.jpg";
+import { useNavigate } from "react-router-dom";
+import InstagramCard from "../components/Instagram_card";
+import instagramPosts from "../data/simple_instgramcard_data.js";
+import { FaInstagram } from "react-icons/fa";
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <>
       <Navbar />
@@ -212,11 +221,131 @@ export default function Home() {
             we have something for everyone.
           </p>
         </div>
-        <main className="mt-10">
+        <article className="mt-10">
           {/* Recipe Cards */}
           <RecipeCard />
+        </article>
+      </section>
+
+      {/* KITCHEN SECTION */}
+      <section className="mt-10 px-2 md:px-5 lg:mt-12 lg:px-10">
+        <main className="flex flex-col items-center justify-center gap-10 lg:flex-row">
+          <div className="space-y-5 text-center md:mt-20 lg:w-3/5 lg:text-start">
+            <h2 className="text-3xl font-semibold text-center sm:text-5xl lg:text-left">
+              Everyone can be a chef in their own kitchen
+            </h2>
+            <p className="text-gray-500 text-center lg:max-w-full lg:text-left">
+              Cooking is not just about making food, it's about creating
+              memories. With our easy-to-follow recipes, you can impress your
+              family and friends with delicious meals. kitchen.
+            </p>
+            <button
+              onClick={() => navigate("/about")}
+              className="bg-black/80 text-white 
+               px-10 py-3 rounded-lg cursor-pointer"
+            >
+              Learn More
+            </button>
+          </div>
+
+          {/* KITCHEN PAGE */}
+          <div className="kitchen relative px-8 pt-10 rounded-4xl">
+            <img
+              src={chef}
+              alt="Chef In Kitchen"
+              className="w[600px] rounded-4xl"
+            />
+            <img
+              src={tomato}
+              alt="Tomato"
+              className="absolute top-4/5 left-3/20 rounded-[50%]"
+            />
+            <img
+              src={meat}
+              alt="Meat"
+              className="absolute top-1/5 left-1/10 rounded-[50%]"
+            />
+
+            <img
+              src={onions}
+              alt="Onions"
+              className="absolute top-1/5 right-1/4 rounded-[50%]"
+            />
+
+            <img
+              src={vegan}
+              alt="Vegan"
+              className="absolute top-3/10 right-0 rounded-[50%]"
+            />
+          </div>
         </main>
       </section>
+
+      {/* @FOODIELAND ON INSTAGRAM */}
+      <section className="instagram_card py-10 px-2  md:px-10 lg:px-10 md:py-12 lg:py-20">
+        <main>
+          <div className="text-center flex flex-col items-center justify-center space-y-5 ">
+            <h2 className="text-3xl font-semibold sm:text-5xl">
+              Check out @foodieland on Instagram
+            </h2>
+
+            <p
+              className="text-gray-500 max-w-full
+              md:text-lg lg:max-w-1/2"
+            >
+              Follow us on Instagram for daily inspiration, recipes, and
+              behind-the-scenes content. Join our community of food lovers and
+              share your culinary creations with us!
+            </p>
+          </div>
+
+          {/* INSTAGRAM POSTS */}
+          <div className="my-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {instagramPosts.map((post) => (
+              <InstagramCard key={post.id} post={post} />
+            ))}
+          </div>
+
+          {/* MY INSTAGRAM LINK */}
+          <div className="text-center mx-auto flex items-center justify-center">
+            <button
+              className="bg-black/80 text-white
+            px-10 py-3 rounded-lg cursor-pointer flex items-center justify-center space-x-2"
+            >
+              <a
+                href="https://www.instagram.com/gbewato06/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2"
+              >
+                <FaInstagram />
+                <span className="text-center">View in Instagram</span>
+              </a>
+            </button>
+          </div>
+        </main>
+      </section>
+
+      {/* DELICIOUS RECIPT */}
+      <main className="mt-10 px-2 md:px-5 lg:mt-12 lg:px-10">
+        <div className="text-center flex flex-col items-center justify-center space-y-5 ">
+          <h2 className="text-3xl font-semibold sm:text-5xl">
+            Try this delicious recipe to make your day
+          </h2>
+
+          <p
+            className="text-gray-500 max-w-full
+              md:text-lg lg:max-w-1/2"
+          >
+            Follow us on Instagram for daily inspiration, recipes, and
+            behind-the-scenes content. Join our community of food lovers and
+            share your culinary creations with us!
+          </p>
+        </div>
+
+        {/* Recipe Cards */}
+        <RecipeCard />
+      </main>
     </>
   );
 }

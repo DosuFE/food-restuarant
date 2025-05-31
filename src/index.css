@@ -155,8 +155,21 @@ li {
   line-height: 1.5;
 }
 
-.recipe_card{
-  background-image: linear-gradient(to top, hsla(191, 85%, 95%, 1), hsla(191, 85%, 95%, 0));
+.recipe_card {
+  background-image: linear-gradient(
+    to top,
+    hsla(191, 85%, 95%, 1),
+    hsla(191, 85%, 95%, 0)
+  );
+}
+
+.kitchen,
+.instagram_card {
+  background-image: linear-gradient(
+    to top,
+    hsla(191, 85%, 95%, 1),
+    hsla(191, 85%, 95%, 0)
+  );
 }
 
 @keyframes scroll {
