@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import InstagramCard from "../components/Instagram_card";
 import instagramPosts from "../data/simple_instgramcard_data.js";
 import { FaInstagram } from "react-icons/fa";
-import DeliciousRecipeGrid from "../components/deliciousRecipeGrid";
+// import DeliciousRecipeGrid from "../components/deliciousRecipeGrid";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -340,9 +340,7 @@ export default function Home() {
             delights, we have something for every taste.
           </p>
         </div>
-        <article className="my-10">
-          <DeliciousRecipeGrid />
-        </article>
+        <article className="my-10">{/* <DeliciousRecipeGrid /> */}</article>
       </main>
     </>
   );
