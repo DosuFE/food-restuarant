@@ -1,4 +1,4 @@
-import wagyuBurger from "../assets/wagyu_beef.jpg";
+import wagyuBurger from "../assets/wagyu-burger.jpg";
 import fruitySalad from "../assets/fruit_salad.jpg";
 import japanese from "../assets/japanese.jpg";
 import walnutTaco from "../assets/walnut_vegetarian_taco.jpg";
