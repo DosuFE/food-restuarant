@@ -328,7 +328,7 @@ export default function Home() {
       </section>
 
       {/* DELICIOUS RECIPE SECTION */}
-      {/* <main className="mt-10 px-2 md:px-5 lg:mt-12 lg:px-10">
+      <main className="mt-10 px-2 md:px-5 lg:mt-12 lg:px-10">
         <div className="text-center flex flex-col items-center justify-center space-y-5">
           <h2 className="text-3xl font-semibold sm:text-5xl">
             Try this delicious recipe to make your day
@@ -343,7 +343,7 @@ export default function Home() {
         <article className="my-10">
           <DeliciousRecipeGrid />
         </article>
-      </main> */}
+      </main>
     </>
   );
 }
