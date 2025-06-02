@@ -1,5 +1,5 @@
 import DeliciousRecipeCard from "./DeliciousRecipeCard";
-import { deliciousRecipes } from "../data/delicious_recipe";
+import { deliciousRecipes } from "../data/deliciousRecipes";
 
 const DeliciousRecipeGrid = () => {
   return (
