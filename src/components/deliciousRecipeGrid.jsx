@@ -1,4 +1,4 @@
-import DeliciousRecipeCard from "./DeliciousRecipeCard";
+import DeliciousRecipeCard from "./deliciousRecipeCard";
 import { deliciousRecipes } from "../data/deliciousRecipes";
 
 const DeliciousRecipeGrid = () => {
