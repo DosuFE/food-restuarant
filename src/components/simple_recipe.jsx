@@ -38,8 +38,8 @@ export default function RecipeCard() {
       }
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const handleCardClick = (recipe) => {
@@ -55,14 +55,15 @@ export default function RecipeCard() {
   };
 
   // Determine how many cards to show based on screen size and showAll state
-  const visibleRecipes = isMobile && !showAll ? simpleRecipe.slice(0, 4) : simpleRecipe;
+  const visibleRecipes =
+    isMobile && !showAll ? simpleRecipe.slice(0, 4) : simpleRecipe;
 
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4">
         {visibleRecipes.map((recipe) => (
-          <div 
-            key={recipe.id} 
+          <div
+            key={recipe.id}
             className="recipe_card rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-4 flex flex-col items-center cursor-pointer"
             onClick={() => handleCardClick(recipe)}
           >
@@ -83,7 +84,9 @@ export default function RecipeCard() {
                 </div>
               </div>
             </div>
-            <h3 className="recipe-title text-lg font-semibold text-center mb-2 line-clamp-2">{recipe.title}</h3>
+            <h3 className="recipe-title text-lg font-semibold text-center mb-2 line-clamp-2">
+              {recipe.title}
+            </h3>
             <div className="flex justify-between w-full mt-auto pt-2 text-sm text-gray-600">
               <p className="recipe-time">⏱️ {recipe.time}</p>
               <p className="recipe-views">👁️ {recipe.views}M</p>
@@ -106,15 +109,21 @@ export default function RecipeCard() {
 
       {/* Modal for recipe details */}
       {selectedRecipe && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" onClick={handleCloseModal}>
-          <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+          onClick={handleCloseModal}
+        >
+          <div
+            className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="relative">
               <img
                 src={imageMap[selectedRecipe.image]}
                 alt={selectedRecipe.title}
                 className="w-full h-64 object-cover rounded-t-xl"
               />
-              <button 
+              <button
                 className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100"
                 onClick={handleCloseModal}
               >
@@ -122,17 +131,23 @@ export default function RecipeCard() {
               </button>
             </div>
             <div className="p-6">
-              <h2 className="text-2xl font-bold mb-4">{selectedRecipe.title}</h2>
+              <h2 className="text-2xl font-bold mb-4">
+                {selectedRecipe.title}
+              </h2>
               <div className="flex items-center gap-4 mb-4">
                 <p className="text-gray-600">⏱️ {selectedRecipe.time}</p>
-                <p className="text-gray-600">👁️ {selectedRecipe.views}M views</p>
+                <p className="text-gray-600">
+                  👁️ {selectedRecipe.views}M views
+                </p>
               </div>
               {/* Add more recipe details here */}
               <div className="mt-4">
                 <h3 className="text-xl font-semibold mb-2">Description</h3>
                 <p className="text-gray-600">
-                  A delicious {selectedRecipe.title.toLowerCase()} that you can prepare in just {selectedRecipe.time}. 
-                  This recipe has been viewed by {selectedRecipe.views}M people and is perfect for any occasion.
+                  A delicious {selectedRecipe.title.toLowerCase()} that you can
+                  prepare in just {selectedRecipe.time}. This recipe has been
+                  viewed by {selectedRecipe.views}M people and is perfect for
+                  any occasion.
                 </p>
               </div>
             </div>

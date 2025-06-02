@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import InstagramCard from "../components/Instagram_card";
 import instagramPosts from "../data/simple_instgramcard_data.js";
 import { FaInstagram } from "react-icons/fa";
+import DeliciousRecipeGrid from "../components/deliciousRecipeGrid";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -326,25 +327,22 @@ export default function Home() {
         </main>
       </section>
 
-      {/* DELICIOUS RECIPT */}
+      {/* DELICIOUS RECIPE SECTION */}
       <main className="mt-10 px-2 md:px-5 lg:mt-12 lg:px-10">
-        <div className="text-center flex flex-col items-center justify-center space-y-5 ">
+        <div className="text-center flex flex-col items-center justify-center space-y-5">
           <h2 className="text-3xl font-semibold sm:text-5xl">
             Try this delicious recipe to make your day
           </h2>
 
-          <p
-            className="text-gray-500 max-w-full
-              md:text-lg lg:max-w-1/2"
-          >
-            Follow us on Instagram for daily inspiration, recipes, and
-            behind-the-scenes content. Join our community of food lovers and
-            share your culinary creations with us!
+          <p className="text-gray-500 max-w-full md:text-lg lg:max-w-1/2">
+            Discover our collection of mouthwatering recipes that will transform
+            your cooking experience. From quick and easy meals to gourmet
+            delights, we have something for every taste.
           </p>
         </div>
-
-        {/* Recipe Cards */}
-        <RecipeCard />
+        <article className="my-10">
+          <DeliciousRecipeGrid />
+        </article>
       </main>
     </>
   );
