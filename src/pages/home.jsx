@@ -14,20 +14,25 @@ import { useNavigate } from "react-router-dom";
 import InstagramCard from "../components/Instagram_card";
 import instagramPosts from "../data/simple_instgramcard_data.js";
 import { FaInstagram } from "react-icons/fa";
-import DeliciousRecipeGrid from "../components/deliciousRecipeGrid";
+import DeliciousRecipeGrid from "../components/DeliciousRecipeGrid";
+import Subscription from "../components/subscribeSection.jsx";
+import Footer from "../components/footer.jsx";
+// import { useEffect } from "react";
+import useScrollAnimation from "../hooks/useScrollAnimation";
 
 export default function Home() {
   const navigate = useNavigate();
+  useScrollAnimation();
 
   return (
     <>
       <Navbar />
       <HeroSection />
       {/* CATEGORIES SECTION */}
-      <section className="mt-10 px-2 md:px-5 lg:px-10">
+      <section className="mt-10 px-2 md:px-5 lg:px-10 reveal">
         <main>
           {/* CATEGORIES */}
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between reveal-left">
             <h1 className="text-2xl font-semibold md:text-5xl">Categories</h1>
             <button className="btn font-semibold px-5 py-3 rounded-lg">
               View All Categories
@@ -35,7 +40,7 @@ export default function Home() {
           </div>
 
           {/* CATEGORIES ITEM */}
-          <div className="pt-8 md:grid md:grid-cols-3 lg:grid-cols-6 gap-5 pb-4">
+          <div className="pt-8 md:grid md:grid-cols-3 lg:grid-cols-6 gap-5 pb-4 reveal-scale">
             {/* Mobile scrolling container */}
             <div className="flex overflow-hidden md:hidden">
               <div className="flex animate-scroll">
@@ -209,29 +214,26 @@ export default function Home() {
       </section>
 
       {/* SIMPLE RECIPE & TASTY SECTION */}
-      <section className="mt-10 px-2 md:px-5 lg:mt-12 lg:px-10">
-        {/* SIMPLE RECIPE & TASTY */}
-        <div className="flex flex-col items-center justify-center gap-5 text-center">
+      <section className="mt-10 px-2 md:px-5 lg:mt-12 lg:px-10 reveal">
+        <div className="flex flex-col items-center justify-center gap-5 text-center reveal-left">
           <h1 className="text-2xl font-semibold md:text-5xl">
             Simple and tasty recipes
           </h1>
-
           <p className="text-gray-500 max-w-full md:text-lg lg:max-w-1/2">
             Discover a variety of delicious recipes that are easy to make and
             perfect for any occasion. From quick breakfasts to gourmet dinners,
             we have something for everyone.
           </p>
         </div>
-        <article className="mt-10">
-          {/* Recipe Cards */}
+        <article className="mt-10 reveal-scale">
           <RecipeCard />
         </article>
       </section>
 
       {/* KITCHEN SECTION */}
-      <section className="mt-10 px-2 md:px-5 lg:mt-12 lg:px-10">
+      <section className="mt-10 px-2 md:px-5 lg:mt-12 lg:px-10 reveal">
         <main className="flex flex-col items-center justify-center gap-10 lg:flex-row">
-          <div className="space-y-5 text-center md:mt-20 lg:w-3/5 lg:text-start">
+          <div className="space-y-5 text-center md:mt-20 lg:w-3/5 lg:text-start reveal-left">
             <h2 className="text-3xl font-semibold text-center sm:text-5xl lg:text-left">
               Everyone can be a chef in their own kitchen
             </h2>
@@ -242,15 +244,14 @@ export default function Home() {
             </p>
             <button
               onClick={() => navigate("/about")}
-              className="bg-black/80 text-white 
-               px-10 py-3 rounded-lg cursor-pointer"
+              className="bg-black/80 text-white px-10 py-3 rounded-lg cursor-pointer"
             >
               Learn More
             </button>
           </div>
 
           {/* KITCHEN PAGE */}
-          <div className="kitchen relative px-8 pt-10 rounded-4xl">
+          <div className="kitchen relative px-8 pt-10 rounded-4xl reveal-right">
             <img
               src={chef}
               alt="Chef In Kitchen"
@@ -283,17 +284,13 @@ export default function Home() {
       </section>
 
       {/* @FOODIELAND ON INSTAGRAM */}
-      <section className="instagram_card py-10 px-2  md:px-10 lg:px-10 md:py-12 lg:py-20">
+      <section className="instagram_card py-10 px-2 md:px-10 lg:px-10 md:py-12 lg:py-20 reveal">
         <main>
-          <div className="text-center flex flex-col items-center justify-center space-y-5 ">
+          <div className="text-center flex flex-col items-center justify-center space-y-5 reveal-left">
             <h2 className="text-3xl font-semibold sm:text-5xl">
               Check out @foodieland on Instagram
             </h2>
-
-            <p
-              className="text-gray-500 max-w-full
-              md:text-lg lg:max-w-1/2"
-            >
+            <p className="text-gray-500 max-w-full md:text-lg lg:max-w-1/2">
               Follow us on Instagram for daily inspiration, recipes, and
               behind-the-scenes content. Join our community of food lovers and
               share your culinary creations with us!
@@ -301,14 +298,14 @@ export default function Home() {
           </div>
 
           {/* INSTAGRAM POSTS */}
-          <div className="my-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="my-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-scale">
             {instagramPosts.map((post) => (
               <InstagramCard key={post.id} post={post} />
             ))}
           </div>
 
           {/* MY INSTAGRAM LINK */}
-          <div className="text-center mx-auto flex items-center justify-center">
+          <div className="text-center mx-auto flex items-center justify-center reveal">
             <button
               className="bg-black/80 text-white
             px-10 py-3 rounded-lg cursor-pointer flex items-center justify-center space-x-2"
@@ -328,22 +325,33 @@ export default function Home() {
       </section>
 
       {/* DELICIOUS RECIPE SECTION */}
-      <main className="mt-10 px-2 md:px-5 lg:mt-12 lg:px-10">
-        <div className="text-center flex flex-col items-center justify-center space-y-5">
+      <main className="mt-10 px-2 md:px-5 lg:mt-12 lg:px-10 reveal">
+        <div className="text-center flex flex-col items-center justify-center space-y-5 reveal-left">
           <h2 className="text-3xl font-semibold sm:text-5xl">
             Try this delicious recipe to make your day
           </h2>
-
           <p className="text-gray-500 max-w-full md:text-lg lg:max-w-1/2">
             Discover our collection of mouthwatering recipes that will transform
             your cooking experience. From quick and easy meals to gourmet
             delights, we have something for every taste.
           </p>
         </div>
-        <article className="my-10">
+        <article className="my-10 reveal-scale">
           <DeliciousRecipeGrid />
         </article>
       </main>
+
+      {/* LAST SECTION TO THE FOOTER */}
+      <section className="px-2 my-12 md:px-5 lg:px-12 lg:my-16 reveal">
+        <main className="newsletter_container relative w-full py-10 shadow-2xl md:rounded-4xl">
+          <div className="relative z-10 reveal-scale">
+            <Subscription />
+          </div>
+        </main>
+      </section>
+
+      {/* FOOTER */}
+      <Footer />
     </>
   );
 }

@@ -110,40 +110,39 @@ export default function RecipeCard() {
       {/* Modal for recipe details */}
       {selectedRecipe && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-white/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
           onClick={handleCloseModal}
         >
           <div
-            className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl transform transition-all duration-300"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative">
               <img
                 src={imageMap[selectedRecipe.image]}
                 alt={selectedRecipe.title}
-                className="w-full h-64 object-cover rounded-t-xl"
+                className="w-full h-48 sm:h-64 object-cover rounded-t-xl"
               />
               <button
-                className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100"
+                className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors duration-300"
                 onClick={handleCloseModal}
               >
                 ✕
               </button>
             </div>
-            <div className="p-6">
-              <h2 className="text-2xl font-bold mb-4">
+            <div className="p-4 sm:p-6">
+              <h2 className="text-xl sm:text-2xl font-bold mb-4">
                 {selectedRecipe.title}
               </h2>
-              <div className="flex items-center gap-4 mb-4">
+              <div className="flex items-center gap-4 mb-4 text-sm sm:text-base">
                 <p className="text-gray-600">⏱️ {selectedRecipe.time}</p>
                 <p className="text-gray-600">
                   👁️ {selectedRecipe.views}M views
                 </p>
               </div>
-              {/* Add more recipe details here */}
               <div className="mt-4">
-                <h3 className="text-xl font-semibold mb-2">Description</h3>
-                <p className="text-gray-600">
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">Description</h3>
+                <p className="text-gray-600 text-sm sm:text-base">
                   A delicious {selectedRecipe.title.toLowerCase()} that you can
                   prepare in just {selectedRecipe.time}. This recipe has been
                   viewed by {selectedRecipe.views}M people and is perfect for
