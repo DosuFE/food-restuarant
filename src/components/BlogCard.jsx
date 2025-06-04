@@ -4,6 +4,14 @@ import BlogPopup from './BlogPopup';
 
 const BlogCard = ({ blog }) => {
   const [showPopup, setShowPopup] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
+  // Fallback image URL
+  const fallbackImage = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c';
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
 
   return (
     <>
@@ -14,9 +22,11 @@ const BlogCard = ({ blog }) => {
         {/* Blog Image */}
         <div className="relative h-48 w-full overflow-hidden">
           <img
-            src={blog.image}
+            src={imageError ? fallbackImage : blog.image}
             alt={blog.title}
             className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+            onError={handleImageError}
+            loading="lazy"
           />
           <div className="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm">
             {blog.category}
@@ -50,6 +60,7 @@ const BlogCard = ({ blog }) => {
                 src={blog.author.avatar}
                 alt={blog.author.name}
                 className="w-8 h-8 rounded-full object-cover"
+                loading="lazy"
               />
               <span className="text-sm font-medium">{blog.author.name}</span>
             </div>
