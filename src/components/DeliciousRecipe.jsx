@@ -1,7 +1,7 @@
-import DeliciousRecipeCard from "../components/deliciousRecipeCard.jsx";
-import { deliciousRecipes } from "../data/deliciousRecipes";
+import DeliciousRecipeCard from "./deliciousRecipeCard.jsx";
+import { deliciousRecipes } from "../data/deliciousRecipes.js";
 
-const DeliciousRecipeGrid = () => {
+const DeliciousRecipe = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
       {deliciousRecipes.map((recipe) => (
@@ -11,4 +11,4 @@ const DeliciousRecipeGrid = () => {
   );
 };
 
-export default DeliciousRecipeGrid;
+export default DeliciousRecipe;
