@@ -1,24 +1,24 @@
-import HeroSection from "../components/heroSection.jsx";
-import Navbar from "../components/navbar.jsx";
+import HeroSection from "../components/heroSection";
+import Navbar from "../components/navbar";
 import breakfast from "../assets/breakfast.jpg";
 import vegan from "../assets/vegan.jpg";
 import meat from "../assets/meat.jpg";
 import dessert from "../assets/dessert.jpg";
 import lunch from "../assets/lunch.jpg";
 import chocolate from "../assets/chocolate.jpg";
-import RecipeCard from "../components/simple_recipe.jsx";
+import RecipeCard from "../components/simple_recipe";
 import chef from "../assets/portrait-happy-male-chef-dressed-uniform.jpg";
 import onions from "../assets/onions.jpg";
 import tomato from "../assets/tomato.jpg";
 import { useNavigate } from "react-router-dom";
-import InstagramCard from "../components/Instagram_card.jsx";
+import InstagramCard from "../components/Instagram_card";
 import instagramPosts from "../data/simple_instgramcard_data.js";
 import { FaInstagram } from "react-icons/fa";
-import DeliciousRecipeGrid from "../components/DeliciousRecipeGrid.jsx";
-import Subscription from "../components/subscribeSection.jsx";
-import Footer from "../components/footer.jsx";
+import DeliciousRecipeGrid from "../components/DeliciousRecipeGrid";
+import Subscription from "../components/subscribeSection";
+import Footer from "../components/footer";
 // import { useEffect } from "react";
-import useScrollAnimation from "../hooks/useScrollAnimation.js";
+import useScrollAnimation from "../hooks/useScrollAnimation";
 
 export default function Home() {
   const navigate = useNavigate();
