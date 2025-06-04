@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import InstagramCard from "../components/Instagram_card";
 import instagramPosts from "../data/simple_instgramcard_data.js";
 import { FaInstagram } from "react-icons/fa";
-import DeliciousRecipeGrid from "../components/deliciousRecipeGrid.jsx";
+import DeliciousRecipeGrid from "../components/DeliciousRecipeGrid";
 import Subscription from "../components/subscribeSection";
 import Footer from "../components/footer";
 // import { useEffect } from "react";
