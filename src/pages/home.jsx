@@ -34,7 +34,11 @@ export default function Home() {
           {/* CATEGORIES */}
           <div className="flex items-center justify-between reveal-left">
             <h1 className="text-2xl font-semibold md:text-5xl">Categories</h1>
-            <button className="btn font-semibold px-5 py-3 rounded-lg">
+            <button
+              onClick={() => navigate("/recipe")}
+              type="button"
+              className="btn font-semibold px-5 py-3 rounded-lg"
+            >
               View All Categories
             </button>
           </div>
@@ -243,7 +247,8 @@ export default function Home() {
               family and friends with delicious meals. kitchen.
             </p>
             <button
-              onClick={() => navigate("/about")}
+              onClick={() => navigate("/recipe")}
+              type="button"
               className="bg-black/80 text-white px-10 py-3 rounded-lg cursor-pointer"
             >
               Learn More
