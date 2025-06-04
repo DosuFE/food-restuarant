@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
-import Blogs from "./pages/blog";
+// import Blogs from "./pages/blog";
 import Contact from "./pages/contact";
 import NoPage from "./pages/nopage";
 import Recipe from "./pages/recipes";
 import About from "./pages/about";
 import PreLoader from "./components/PreLoader";
+import Blog from "./pages/blog";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,7 +31,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/recipe" element={<Recipe />} />
-        <Route path="/blog" element={<Blogs />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NoPage />} />
