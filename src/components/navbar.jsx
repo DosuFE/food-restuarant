@@ -37,8 +37,8 @@ export default function Navbar() {
           className={`${
             isMenuOpen ? "flex" : "hidden"
           } py-3 px-4 flex-col absolute top-20 right-3 w-2/5 bg-slate-100 backdrop-blur-md
-           font-semibold 
-           z-10 items-start justify-start space-y-3 rounded-lg shadow-lg
+           font-semibold z-10 lg:static lg:flex lg:flex-row lg:bg-transparent
+           items-start justify-start space-y-3 rounded-lg shadow-lg
            md:top-24 md:w-1/5 lg:static   md:space-x-5 lg:bg-transparent 
            lg:flex lg:backdrop-blur-none lg:shadow-none
            md:space-y-5 lg:space-y-0 lg:w-auto lg:space-x-10 lg:flex-row`}

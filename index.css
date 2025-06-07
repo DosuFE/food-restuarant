@@ -1,0 +1,28 @@
+/* Add these animations to your index.css */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.toast-animation {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.toast-slide {
+  animation: slideIn 0.3s ease-out;
+}

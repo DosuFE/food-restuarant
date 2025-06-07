@@ -8,6 +8,20 @@ const BlogGrid = () => {
   const [error, setError] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('All');
 
+  // Array of reliable food-related images from a CDN
+  const foodImages = [
+    'https://cdn.pixabay.com/photo/2017/10/09/19/29/eat-2834549_1280.jpg',
+    'https://cdn.pixabay.com/photo/2016/11/06/23/31/breakfast-1804457_1280.jpg',
+    'https://cdn.pixabay.com/photo/2017/01/11/11/33/cake-1971552_1280.jpg',
+    'https://cdn.pixabay.com/photo/2017/01/20/15/06/healthy-1995044_1280.jpg',
+    'https://cdn.pixabay.com/photo/2016/11/29/13/39/attractive-1869761_1280.jpg',
+    'https://cdn.pixabay.com/photo/2017/01/26/02/06/platter-2009590_1280.jpg',
+    'https://cdn.pixabay.com/photo/2016/11/29/09/38/adult-1868750_1280.jpg',
+    'https://cdn.pixabay.com/photo/2017/01/20/15/06/healthy-1995044_1280.jpg',
+    'https://cdn.pixabay.com/photo/2016/11/29/13/39/attractive-1869761_1280.jpg',
+    'https://cdn.pixabay.com/photo/2017/01/26/02/06/platter-2009590_1280.jpg'
+  ];
+
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
@@ -20,11 +34,12 @@ const BlogGrid = () => {
         }
 
         // Transform the data to match our blog structure
-        const transformedBlogs = response.data.posts.map(post => ({
+        const transformedBlogs = response.data.posts.map((post, index) => ({
           id: post.id,
           title: post.title,
           excerpt: post.body,
-          image: `https://picsum.photos/seed/${post.id}/800/600`,
+          // Use a reliable CDN image source
+          image: foodImages[index % foodImages.length],
           category: ['Cooking Tips', 'Recipes', 'Food News', 'Healthy Eating'][Math.floor(Math.random() * 4)],
           date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
           readTime: Math.floor(Math.random() * 10) + 5,
