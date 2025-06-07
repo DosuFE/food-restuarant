@@ -1,27 +1,27 @@
 import Navbar from "../components/navbar";
 import Subscription from "../components/subscribeSection";
 import Footer from "../components/footer";
-import DeliciousRecipe from "../components/deliciousRecipe";
+import DeliciousRecipe from "../components/DeliciousRecipes";
 import FormContact from "../components/formContact";
 import chef from "../assets/portrait-happy-male-chef-dressed-uniform.jpg";
-import { useEffect, useState } from 'react';
+import { useState } from "react";
 
 export default function Contact() {
   const [showToast, setShowToast] = useState(false);
-  const [copiedText, setCopiedText] = useState('');
+  const [copiedText, setCopiedText] = useState("");
 
   const handleContactClick = async (text) => {
     try {
       await navigator.clipboard.writeText(text);
       setCopiedText(text);
       setShowToast(true);
-      
+
       // Auto-hide toast after 3 seconds
       setTimeout(() => {
         setShowToast(false);
       }, 3000);
     } catch (err) {
-      console.error('Failed to copy text: ', err);
+      console.error("Failed to copy text: ", err);
     }
   };
 
@@ -38,7 +38,8 @@ export default function Contact() {
               Contact Us
             </h1>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              We'd love to hear from you. Get in touch with our team for any inquiries or feedback.
+              We'd love to hear from you. Get in touch with our team for any
+              inquiries or feedback.
             </p>
           </div>
 
@@ -78,30 +79,30 @@ export default function Contact() {
               <h3 className="text-xl font-semibold mb-2">Our Location</h3>
               <p className="text-gray-600">123 Restaurant Street, Food City</p>
             </div>
-            
+
             {/* Phone Card */}
             <div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
               <div className="text-blue-600 text-3xl mb-4 animate-pulse">
                 <i className="fas fa-phone"></i>
               </div>
               <h3 className="text-xl font-semibold mb-2">Phone Number</h3>
-              <button 
-                onClick={() => handleContactClick('+2349126116913')}
+              <button
+                onClick={() => handleContactClick("+2349126116913")}
                 className="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center justify-center gap-2 group mx-auto"
               >
                 <span>(+234 9126116913)</span>
                 <i className="fas fa-phone-alt text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
               </button>
             </div>
-            
+
             {/* Email Card */}
             <div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
               <div className="text-blue-600 text-3xl mb-4 animate-pulse">
                 <i className="fas fa-envelope"></i>
               </div>
               <h3 className="text-xl font-semibold mb-2">Email Address</h3>
-              <button 
-                onClick={() => handleContactClick('sulaimondosu988@gmail.com')}
+              <button
+                onClick={() => handleContactClick("sulaimondosu988@gmail.com")}
                 className="text-gray-600 hover:text-blue-600 transition-colors duration-300 flex items-center justify-center gap-2 group mx-auto"
               >
                 <span>sulaimondosu988@gmail.com</span>
@@ -118,10 +119,12 @@ export default function Contact() {
                   <i className="fas fa-check-circle text-green-500 text-xl"></i>
                 </div>
                 <div className="flex-1">
-                  <p className="text-gray-800 font-medium">Copied to clipboard!</p>
+                  <p className="text-gray-800 font-medium">
+                    Copied to clipboard!
+                  </p>
                   <p className="text-gray-500 text-sm truncate">{copiedText}</p>
                 </div>
-                <button 
+                <button
                   onClick={() => setShowToast(false)}
                   className="text-gray-400 hover:text-gray-600 transition-colors p-1"
                 >

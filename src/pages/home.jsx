@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import InstagramCard from "../components/Instagram_card";
 import instagramPosts from "../data/simple_instgramcard_data.js";
 import { FaInstagram } from "react-icons/fa";
-import DeliciousRecipe from "../components/DeliciousRecipe";
+import DeliciousRecipes from "../components/DeliciousRecipes.jsx";
 import Subscription from "../components/subscribeSection";
 import Footer from "../components/footer";
 // import { useEffect } from "react";
@@ -342,7 +342,7 @@ export default function Home() {
           </p>
         </div>
         <article className="my-10 reveal-scale">
-          <DeliciousRecipe />
+          <DeliciousRecipes />
         </article>
       </main>
 
