@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import InstagramCard from "../components/Instagram_card";
 import instagramPosts from "../data/simple_instgramcard_data.js";
 import { FaInstagram } from "react-icons/fa";
-import DeliciousRecipes from "../components/DeliciousRecipes.jsx";
+import DeliciousRecipes from "../components/deliciousRecipes";
 import Subscription from "../components/subscribeSection";
 import Footer from "../components/footer";
 // import { useEffect } from "react";
@@ -256,7 +256,7 @@ export default function Home() {
           </div>
 
           {/* KITCHEN PAGE */}
-          <div className="kitchen relative px-8 pt-10 rounded-4xl reveal-right">
+          <div className="kitchen relative px-8 pt-10 rounded-4xl revealright">
             <img
               src={chef}
               alt="Chef In Kitchen"

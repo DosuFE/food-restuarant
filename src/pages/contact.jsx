@@ -1,7 +1,7 @@
 import Navbar from "../components/navbar";
 import Subscription from "../components/subscribeSection";
 import Footer from "../components/footer";
-import DeliciousRecipe from "../components/DeliciousRecipes";
+import DeliciousRecipe from "../components/deliciousRecipes";
 import FormContact from "../components/formContact";
 import chef from "../assets/portrait-happy-male-chef-dressed-uniform.jpg";
 import { useState } from "react";

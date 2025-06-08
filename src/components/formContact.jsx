@@ -21,6 +21,8 @@ export default function FormContact() {
     e.preventDefault();
     // Here you can add your form submission logic
     console.log('Form submitted:', formData);
+    // Show success message
+    alert('Form submitted successfully!');
     // Reset form after submission
     setFormData({
       name: '',
