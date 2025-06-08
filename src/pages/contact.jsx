@@ -1,7 +1,7 @@
 import Navbar from "../components/navbar";
 import Subscription from "../components/subscribeSection";
 import Footer from "../components/footer";
-import DeliciousRecipe from "../components/deliciousRecipes";
+import DeliciousRecipes from "../components/deliciousRecipes";
 import FormContact from "../components/formContact";
 import chef from "../assets/portrait-happy-male-chef-dressed-uniform.jpg";
 import { useState } from "react";
@@ -149,7 +149,7 @@ export default function Contact() {
       <section className="px-2 my-12 md:px-5 lg:px-12 lg:my-16">
         <main className="delicious_recipes_container w-full py-10 shadow-2xl md:rounded-4xl">
           <div className="relative z-10">
-            <DeliciousRecipe />
+            <DeliciousRecipes />
           </div>
         </main>
       </section>
